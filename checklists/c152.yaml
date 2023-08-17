@@ -1,0 +1,116 @@
+name: C172
+items:
+  - name: LIMITS & SPECS
+    color: blue
+    items:
+      - name: Max. Takeoff & Landing Weight
+        confirmation: 1,670 lbs
+      - name: VNE (Never Exceed)
+        confirmation: 149 KIAS
+      - name: VNO (Structural Cruising)
+        confirmation: 111 KIAS
+      - name: VFE (Flaps Extended)
+        confirmation: 85 KIAS
+      - name: Maximum Window Open Speed
+        confirmation: 143 KIAS
+      - name: Maximum Operating Altitude / Service Ceiling
+        confirmation: 14,700 ft
+  - name: NORMAL PROCEDURES
+    color: orange
+    items: []
+  - name: PREFLIGHT INSPECTION
+    color: grey
+    items:
+      - name: Fuel/Load-manager
+        confirmation: SET / CHECK CG
+        color: blue
+      - name: JPL Mod - EFB Options / W&B
+        confirmation: SET
+        color: blue
+      - name: Ignition
+        confirmation: 'OFF'
+      - name: Master Switch
+        confirmation: 'ON'
+      - name: Fuel Quantity
+        confirmation: CHECK
+      - name: Master Switch
+        confirmation: 'OFF'
+      - name: Fuel Valve (Floor)
+        confirmation: OPEN
+      - name: Outside Inspection
+        confirmation: Perform
+  - name: BEFORE STARTING ENGINE
+    items:
+      - name: Parking Brake
+        confirmation: SET
+        quickstart: true
+      - name: Fuel Valve (Floor)
+        confirmation: OPEN
+        quickstart: true
+      - name: Radios & Electrical Equipment
+        confirmation: 'OFF'
+      - name: Circuit Breakers
+        confirmation: CHECK IN
+  - name: STARTING THE ENGINE
+    items:
+      - name: Master Switch (BAT & ALT)
+        confirmation: 'ON'
+        quickstart: true
+      - name: Nav Lights
+        confirmation: AS REQ / ON
+        quickstart: true
+      - name: Beacon
+        confirmation: 'ON'
+        quickstart: true
+      - name: Mixture
+        confirmation: RICH
+        quickstart: true
+      - name: Carb Heat
+        confirmation: COLD
+        quickstart: true
+      - name: Primer
+        confirmation: AS REQ (up to 3 strokes)
+        quickstart: true
+      - name: Throttle
+        confirmation: OPEN 1/2 INCH
+        quickstart: true
+      - name: Ignition
+        confirmation: START, then BOTH
+        quickstart: true
+      - name: Throttle
+        confirmation: 1,000 RPM
+      - name: Oil Pressure
+        confirmation: CHECK
+        subtext: If no oil pressure is indicating within 30 secs, turn off the engine
+      - name: Ammeter
+        confirmation: CHECK
+  - name: AFTER STARTING ENGINE / BEFORE TAXI
+    items:
+      - name: Mixture
+        confirmation: LEAN (to prevent spark plug fouling
+      - name: Internal Lights
+        confirmation: AS REQ
+      - name: Cabin Air & Temp
+        confirmation: AS REQ
+      - name: Avionics
+        confirmation: ON & SET
+        quickstart: true
+      - name: Altimeters
+        confirmation: SET LOCAL
+        quickstart: true
+      - name: Flight Controls
+        confirmation: CHECK FREE & FULL MOVEMENT
+      - name: Doors
+        confirmation: CLOSED & LATCHED
+      - name: ATC Clearance (Taxi)
+        confirmation: AS REQ
+        color: green
+      - name: Transponder
+        confirmation: SET & STBY
+        quickstart: true
+      - name: Pitot Heat
+        confirmation: AS REQ
+        quickstart: true
+      - name: Taxi Lights
+        confirmation: AS REQ / ON
+        quickstart: true
