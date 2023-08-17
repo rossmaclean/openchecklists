@@ -1,0 +1,109 @@
+name: clongitude
+primaryBackgroundColor: black
+primaryTextColor: white
+items:
+  - name: COCKPIT INSPECTION
+    items:
+      - name: STBY PWR SWITCH
+        confirmation: TEST AND HOLD / ON
+        subtext: GREEN LIGHT FOR MIN 10 SEC DURING TEST
+      - name: EMER LTS SWITCH
+        confirmation: ARM
+      - name: LANDING GEAR HANDLE
+        confirmation: DOWN
+      - name: BATT BUTTONS (BOTH)
+        confirmation: ON, CHECK VOLTS
+      - name: EIS / CAS
+        confirmation: CHECK
+      - name: EXTERNAL POWER SOURCE
+        confirmation: AS DESIRED
+        subtext:
+          - EXT PWR BUTTON (IF AVAIL ILLUMINATED)     ON
+          - BATT AMPS (BOTH)   0 OR CHARGING
+      - name: ---AND/OR---
+        confirmation:
+      - name: APU KNOB
+        confirmation: ON / START
+        subtext:
+          - EXTERNAL POWER   DISCONNECTED
+          - BATT AMPS (BOTH)  0 OR CHARGING
+      - name: EXTERIOR / INTERIOR LIGHTS
+        confirmation: AS REQUIRED
+  - name: COCKPIT PREPARATION
+    items:
+      - name: MFD
+        confirmation:
+      - name: COCKPIT INSPECTION
+        confirmation: COMPLETE
+      - name: EIC / CAS
+        confirmation: CHECK
+      - name: APU KNOB
+        confirmation: ON / START
+      - name: EXTERNAL POWER (IF USED)
+        confirmation: DISCONNECTED
+      - name: ENGINE DRY MOTOR
+        confirmation: CONSIDER
+      - name: ATIS / CLEARANCE
+        confirmation: AS REQUIRED
+      - name: TRIMS
+        confirmation: CHECK / SET FOR TAKEOFF
+      - name: WEIGHT AND FUEL
+        confirmation: COMPLETED
+      - name: TAKEOFF DATA
+        confirmation: COMPLETED
+      - name: V SPEEDS
+        confirmation: VERIFY / SET
+      - name: PRESSURIZATION LDG ELEVATION
+        confirmation: VERIFY / SET
+      - name: FUEL QUANTITY AND BALANCE
+        confirmation: CHECK
+      - name: AUTOPILOT (FIRST FLIGHT OF DAY)
+        confirmation: ON / OFF
+  - name: BEFORE START
+    items:
+      - name: EMER / PARK BRAKE HANDLE
+        confirmation: SET
+      - name: EIS / CAS
+        confirmation: CHECK
+  - name: STARTING ENGINES
+    items:
+      - name: THROTTLES
+        confirmation: IDLE
+      - name: ENGINE RUN / STOP BUTTON
+        confirmation: RUN
+        subtext: (EITHER ENGINE)
+      - name: START PRESSURE
+        confirmation: VERIFY >= 32 PSI
+      - name: ENGINE STARTER BUTTON
+        confirmation: PUSH
+      - name: ENGINE INSTRUMENTS
+        confirmation: MONITOR
+        subtext: REPEAT STEPS FOR OPPOSITE ENGINE
+      - name: EIS / CAS
+        confirmation: CHECK
+  - name: BEFORE TAXI
+    items:
+      - name: FLIGHT CONTROLS
+        confirmation: CHECK
+      - name: SPEEDBRAKES
+        confirmation: CHECK / RETRACTED
+      - name: FLAPS
+        confirmation: STE FOR TAKEOFF
+      - name: FLIGHT INSTRUMENTS / AVIONICS
+        confirmation: CHECK
+      - name: ALTIMETERS
+        confirmation: CONFIRM & COMPARE
+      - name: ENGINE ICE PROTECTION BUTTONS
+        confirmation: AS RQRD
+  - name: TAXI
+    items:
+      - name: EXTERIOR LIGHTS
+        confirmation: AS REQUIRED
+      - name: EMER / PARK BRAKE HANDLE
+        confirmation: STOWED
+      - name: BRAKES
+        confirmation: CHECK
+      - name: NOSEWHEEL STEERING
+        confirmation: CHECK
+      - name: THRUST REVERSERS
+        confirmation: CHECK, AS REQUIRED
