@@ -1,6 +1,5 @@
 import './Checklists.css';
 import {useEffect, useState} from "react";
-import Flipbook from "../checklist/Flipbook";
 import Checklist from "../flipbooks/Checklist";
 
 function Checklists() {
