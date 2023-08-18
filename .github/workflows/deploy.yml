@@ -1,0 +1,31 @@
+name: Deploy
+
+env:
+  ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+
+on:
+  workflow_run:
+    workflows: [Main CI]
+    types:
+      - build_push_image
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Define version'
+        required: true
+        default: 'latest'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloudron Deploy
+        uses: rossmaclean/cloudron-deploy-action@v0.0.23
+        with:
+          image: rossmaclean/openchecklists:${{ github.event.inputs.version }}
+          app-domain: openchecklists.rossmac.co.uk
+          cloudron-server: my.rossmac.co.uk
+          cloudron-token: ${{ secrets.CLOUDRON_TOKEN }}
+          install-if-missing: "true"
+          skip-backup: "true"
+          environment: ${{ env.ENVIRONMENT }}
