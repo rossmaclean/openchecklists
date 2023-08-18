@@ -1,10 +1,12 @@
 import './App.css';
-import Checklist from "./components/checklist/Checklist";
+import Checklists from "./components/checklists/Checklists";
+import Flipbook from "./components/checklist/Flipbook";
 
 function App() {
   return (
-      <div>
-        <Checklist value={'c152'}></Checklist>
+      <div className={'app-container'}>
+        <Checklists/>
+        {/*<Flipbook aircraft={'c152'}/>*/}
       </div>
   );
 }
