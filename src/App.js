@@ -1,12 +1,12 @@
 import './App.css';
-import Checklists from "./components/checklists/Checklists";
+import Checklists from './components/checklists/Checklists';
 
 function App() {
   return (
-      <div className={'app-container'}>
-        <Checklists/>
-        {/*<Flipbook aircraft={'c152'}/>*/}
-      </div>
+    <div className="app-container">
+      <Checklists />
+      {/* <Flipbook aircraft={'c152'}/> */}
+    </div>
   );
 }
 

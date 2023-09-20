@@ -9,16 +9,16 @@ permissions:
   contents: write
 
 jobs:
-#  lint:
-#    name: Lint
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout repo
-#        uses: actions/checkout@v4
-#      - name: Install bun
-#        uses: oven-sh/setup-bun@v1
-#      - name: Lint app
-#        run: make lint
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Lint app
+        run: bun run lint
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
   pages_deploy:
     runs-on: ubuntu-latest
     name: Pages Deploy
-    needs: [build]
+    needs: [lint, test, build]
     steps:
       - uses: actions/checkout@v3
       - name: Download build artifact
