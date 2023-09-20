@@ -5,7 +5,30 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
+#  lint:
+#    name: Lint
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v4
+#      - name: Install bun
+#        uses: oven-sh/setup-bun@v1
+#      - name: Lint app
+#        run: make lint
+#  test:
+#    name: Test
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v4
+#      - name: Install bun
+#        uses: oven-sh/setup-bun@v1
+#      - name: Test app
+#        run: make test
   build:
     runs-on: ubuntu-latest
     name: Build
