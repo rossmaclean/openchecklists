@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/openchecklists/static/css/main.31d6cfe0.css",
+    "main.js": "/openchecklists/static/js/main.ddad8e7d.js",
+    "static/js/496.7266d52e.chunk.js": "/openchecklists/static/js/496.7266d52e.chunk.js",
+    "index.html": "/openchecklists/index.html",
+    "main.ddad8e7d.js.map": "/openchecklists/static/js/main.ddad8e7d.js.map",
+    "496.7266d52e.chunk.js.map": "/openchecklists/static/js/496.7266d52e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.ddad8e7d.js"
+  ]
+}
