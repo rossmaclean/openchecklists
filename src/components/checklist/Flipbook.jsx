@@ -16,9 +16,10 @@ function Flipbook({ aircraft }) {
     fetch(url)
       .then((res) => res.text())
       .then((res) => {
-        setChecklist(YAML.parse(res));
+        const cl = YAML.parse(res);
+        setChecklist(cl);
         setPrevName('Disabled');
-        setNextName(checklist.items[1].name);
+        setNextName(cl.items[1].name);
       });
   }, [aircraft]);
 
@@ -26,27 +27,35 @@ function Flipbook({ aircraft }) {
     if (checklist) {
       if (currentIndex >= checklist.items.length - 1) {
         setNextDisabled(true);
+        setNextName('Disabled');
       } else {
         setNextDisabled(false);
+        setNextName(checklist.items[currentIndex + 1].name);
       }
       if (currentIndex - 1 < 0) {
         setPrevDisabled(true);
+        setPrevName('Disabled');
       } else {
         setPrevDisabled(false);
-      }
-    }
-  }, [currentIndex]);
-
-  useEffect(() => {
-    if (checklist) {
-      if (currentIndex + 1 < checklist.items.length) {
-        setNextName(checklist.items[currentIndex + 1].name);
-      }
-      if (currentIndex > 0) {
         setPrevName(checklist.items[currentIndex - 1].name);
       }
     }
   }, [currentIndex]);
+
+  // useEffect(() => {
+  //   if (checklist) {
+  //     if (currentIndex + 1 < checklist.items.length) {
+  //       setNextName(checklist.items[currentIndex + 1].name);
+  //     } else {
+  //       setNextName('Disabled');
+  //     }
+  //     if (currentIndex > 0) {
+  //       setPrevName(checklist.items[currentIndex - 1].name);
+  //     } else {
+  //       setPrevDisabled('Disabled');
+  //     }
+  //   }
+  // }, [currentIndex]);
 
   return (
   // <Grid container spacing={2}>

@@ -28,13 +28,13 @@ items:
         confirmation: SET
         color: blue
       - name: Ignition
-        confirmation: 'OFF'
+        confirmation: OFF
       - name: Master Switch
-        confirmation: 'ON'
+        confirmation: ON
       - name: Fuel Quantity
         confirmation: CHECK
       - name: Master Switch
-        confirmation: 'OFF'
+        confirmation: OFF
       - name: Fuel Valve (Floor)
         confirmation: OPEN
       - name: Outside Inspection
@@ -48,7 +48,7 @@ items:
         confirmation: OPEN
         quickstart: true
       - name: Radios & Electrical Equipment
-        confirmation: 'OFF'
+        confirmation: OFF
       - name: Circuit Breakers
         confirmation: CHECK IN
   - name: STARTING THE ENGINE
@@ -114,3 +114,40 @@ items:
       - name: Taxi Lights
         confirmation: AS REQ / ON
         quickstart: true
+  - name: TAXI
+    items:
+      - name: Release parking brake
+        confirmation:
+      - name: Speed max. 15 KIAS / 5 in turns
+        confirmation:
+      - name: Test brakes during taxi
+        confirmation:
+  - name: ENGINE RUNUP TEST
+    items:
+      - name: Parking Brake
+        confirmation: SET
+      - name: Mixture
+        confirmation: AS REQ (RICH below 3,000ft)
+      - name: Throttle
+        confirmation: ~ 1,700 RPM
+      - name: Magneto Check
+        confirmation: LEFT, BOTH, RIGHT, BOTH
+#        Add other one
+      - name: Carb Heat Check
+        confirmation: ON, then OFF
+#        Add extra
+      - name: Ammeter
+        confirmation: Verify POSITIVE LOAD
+      - name: Section Gauge
+        confirmation: Verify GREEN RANGE
+      - name: Oil Temp & Oil Pressure
+        confirmation: Verify GREEN RANGE
+      - name: Throttle
+        confirmation: Full Open
+#        add extra
+      - name: Throttle
+        confirmation: ~ 1,000 RPM
+  - name: ENGINE RUNUP TEST
+    items:
+      - name: Parking Brake
+        confirmation: SET

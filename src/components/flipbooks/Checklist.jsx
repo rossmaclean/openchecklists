@@ -1,17 +1,14 @@
 import './Checklist.css';
 import React, { useEffect, useState } from 'react';
-import * as YAML from 'yaml';
+import { getChecklist } from '../../services/ChecklistService';
 
 function Checklist({ aircraft }) {
-  const baseUrl = 'https://raw.githubusercontent.com/rossmaclean/openchecklists/main/checklists/';
   const [checklist, setChecklist] = useState();
 
   useEffect(() => {
-    const url = `${baseUrl + aircraft}.yaml`;
-    fetch(url)
-      .then((res) => res.text())
+    getChecklist(aircraft)
       .then((res) => {
-        setChecklist(YAML.parse(res));
+        setChecklist(res);
       });
   }, [aircraft]);
 
