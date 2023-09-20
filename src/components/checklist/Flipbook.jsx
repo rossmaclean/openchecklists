@@ -19,9 +19,6 @@ function Flipbook({ aircraft }) {
         setChecklist(YAML.parse(res));
         setPrevName('Disabled');
         setNextName(checklist.items[1].name);
-      })
-      .catch((err) => {
-        console.log('unable to fetch checklists ', err);
       });
   }, [aircraft]);
 
@@ -79,7 +76,7 @@ function Flipbook({ aircraft }) {
               <tr key={checklist.items[currentIndex].name}>
                 <td>
                   <table style={{
-                    border: '1px solid ' + 'brown',
+                    border: '1px solid brown',
                     width: '100%',
                     marginBottom: '0.5rem',
                   }}
@@ -128,8 +125,20 @@ function Flipbook({ aircraft }) {
           </table>
         </div>
       )}
-      <button onClick={() => setCurrentIndex(currentIndex - 1)} disabled={prevDisabled}>{prevName}</button>
-      <button onClick={() => setCurrentIndex(currentIndex + 1)} disabled={nextDisabled}>{nextName}</button>
+      <button
+        type="button"
+        onClick={() => setCurrentIndex(currentIndex - 1)}
+        disabled={prevDisabled}
+      >
+        {prevName}
+      </button>
+      <button
+        type="button"
+        onClick={() => setCurrentIndex(currentIndex + 1)}
+        disabled={nextDisabled}
+      >
+        {nextName}
+      </button>
     </div>
   );
 }

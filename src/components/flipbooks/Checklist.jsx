@@ -12,9 +12,6 @@ function Checklist({ aircraft }) {
       .then((res) => res.text())
       .then((res) => {
         setChecklist(YAML.parse(res));
-      })
-      .catch((err) => {
-        console.log('unable to fetch checklists ', err);
       });
   }, [aircraft]);
 

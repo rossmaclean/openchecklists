@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import React, { render } from '@testing-library/react';
 import Checklists from './Checklists';
 
 test('renders learn react link', () => {

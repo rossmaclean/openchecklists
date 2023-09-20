@@ -18,9 +18,6 @@ function Checklists() {
           .map((i) => i.replace('.yaml', ''));
         setChecklists(cl);
         setChecklist(cl[0]);
-      })
-      .catch((err) => {
-        console.log('unable to fetch checklists ', err);
       });
   }, []);
 
