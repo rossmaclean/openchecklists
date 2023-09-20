@@ -51,7 +51,6 @@ jobs:
           name: node-build-artifact
           retention-days: 1
           path: build
-
   pages_deploy:
     runs-on: ubuntu-latest
     name: Pages Deploy

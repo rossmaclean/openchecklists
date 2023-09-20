@@ -9,3 +9,19 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      npm-production-dependencies:
+        dependency-type: "production"
+        exclude-patterns:
+          - "*eslint*"
+      npm-development-dependencies:
+        dependency-type: "development"
+        exclude-patterns:
+          - "*eslint*"
+      npm-eslint-dependencies:
+        patterns:
+          - "*eslint*"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
