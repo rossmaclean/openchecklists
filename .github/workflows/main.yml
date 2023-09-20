@@ -17,6 +17,10 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
       - name: Save build artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -24,8 +28,9 @@ jobs:
           retention-days: 1
           path: build
 
-  build_push_image:
+  pages_deploy:
     runs-on: ubuntu-latest
+    name: Pages Deploy
     needs: [build]
     steps:
       - uses: actions/checkout@v3
