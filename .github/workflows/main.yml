@@ -45,27 +45,6 @@ jobs:
         run: bun install
       - name: Build app
         run: bun run build
-      - name: Save build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-build-artifact
-          retention-days: 1
-          path: build
-  pages_deploy:
-    runs-on: ubuntu-latest
-    name: Pages Deploy
-    needs: [lint, test, build]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: node-build-artifact
-          path: build
-#      - name: Deploy 🚀
-#        uses: JamesIves/github-pages-deploy-action@v4
-#        with:
-#          folder: build
       - name: Fix permissions
         run: |
           chmod -c -R +rX "build/" | while read line; do
@@ -75,23 +54,17 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: build/
-  deploy:
-    # Add a dependency to the build job
-    needs: pages_deploy
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+  pages_deploy:
+    runs-on: ubuntu-latest
+    name: Pages Deploy
+    needs: [lint, test, build]
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v2
