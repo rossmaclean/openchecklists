@@ -19,31 +19,28 @@ jobs:
 #        uses: oven-sh/setup-bun@v1
 #      - name: Lint app
 #        run: make lint
-#  test:
-#    name: Test
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout repo
-#        uses: actions/checkout@v4
-#      - name: Install bun
-#        uses: oven-sh/setup-bun@v1
-#      - name: Test app
-#        run: make test
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Test app
+        run: bun run test
   build:
     runs-on: ubuntu-latest
     name: Build
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+      - name: Build app
+        run: bun run build
       - name: Save build artifacts
         uses: actions/upload-artifact@v3
         with:
